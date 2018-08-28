@@ -23,6 +23,7 @@
 	"homepage": "https://github.com/awspilot/dynamodb-sql#readme",
 	"dependencies": {
 		"@awspilot/dynamodb": "*",
+		"@superquery/parse-pegjs": "^1.0.9",
 		"aws-sdk": ">=2.45.0"
 	},
 	"devDependencies": {
