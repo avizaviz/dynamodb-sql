@@ -191,11 +191,11 @@ describe('query', function () {
     })
 
     it('SELECT * Fand scan multiple pages (integration test in remark)', function (done) {
-        DynamoSQL.query(`						
-			SELECT *  							
-			FROM projects
-			having projectName = 'ga-api' 
-					
+        DynamoSQL.query(`
+                        SELECT *
+                        FROM projects
+                        having projectName = 'ga-api'
+
 			`, {}, function (err, data) {
             //			having ExpressionAttributeValues = 'error'
 
@@ -208,6 +208,13 @@ describe('query', function () {
             done()
         })
     })
+
+    it('SELECT * FROM table with LIMIT', async () => {
+        let result = await DynamoSQL.queryp(`SELECT * FROM projects limit 2`,{})
+
+        // console.log(`lior test: ${result.length}`);
+        expect(result.length).toEqual(2);
+    });
 
     /*
     it('.where(RANGE).le()', function(done) {
