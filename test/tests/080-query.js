@@ -1,3 +1,5 @@
+// let DynamoSQL = require('../../lib/dynamodb.js')();
+let expect = require('expect');
 describe('query', function () {
 
     xit('prepare data for query', function (done) {
@@ -210,10 +212,15 @@ describe('query', function () {
     })
 
     it('SELECT * FROM table with LIMIT', async () => {
-        let result = await DynamoSQL.queryp(`SELECT * FROM projects limit 2`,{})
-
-        // console.log(`lior test: ${result.length}`);
-        expect(result.length).toEqual(2);
+        const LIMIT_AMOUNT = 2;
+        let result = await DynamoSQL.queryp(`SELECT * FROM projects limit ${LIMIT_AMOUNT}`,{});
+        if (!result[0]) {
+            console.log(`Limit test: ${JSON.stringify(result)}`);
+            expect(result[1].length).toBeLessThanOrEqual(LIMIT_AMOUNT);
+        }
+        else{ //err
+            console.log(JSON.stringify(result));
+        }
     });
 
     /*

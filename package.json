@@ -24,12 +24,7 @@
 	"dependencies": {
 		"@awspilot/dynamodb": "*",
 		"@awspilot/dynamodb-sql": "github:awspilot/dynamodb-sql",
-		"aws-sdk": "2.45.0",
-		"babel-cli": "6.26.0",
-		"babel-preset-env": "1.7.0",
-		"babel-preset-es2015": "^6.24.1",
-		"babel-register": "6.26.0",
-		"expect": "^23.6.0"
+		"aws-sdk": "2.45.0"
 	},
 	"devDependencies": {
 		"assert": "*",
@@ -38,6 +33,7 @@
 		"dynalite": "1.2.0",
 		"memdown": "*",
 		"mocha": "5.0.4",
-		"should": "*"
+		"should": "*",
+		"expect": "^23.6.0"
 	}
 }
