@@ -1,3 +1,5 @@
+// let DynamoSQL = require('../../lib/dynamodb.js')();
+let expect = require('expect');
 describe('query', function () {
 
     xit('prepare data for query', function (done) {
@@ -191,11 +193,11 @@ describe('query', function () {
     })
 
     it('SELECT * Fand scan multiple pages (integration test in remark)', function (done) {
-        DynamoSQL.query(`						
-			SELECT *  							
-			FROM projects
-			having projectName = 'ga-api' 
-					
+        DynamoSQL.query(`
+                        SELECT *
+                        FROM projects
+                        having projectName = 'ga-api'
+
 			`, {}, function (err, data) {
             //			having ExpressionAttributeValues = 'error'
 
@@ -208,6 +210,18 @@ describe('query', function () {
             done()
         })
     })
+
+    it('SELECT * FROM table with LIMIT', async () => {
+        const LIMIT_AMOUNT = 2;
+        let result = await DynamoSQL.queryp(`SELECT * FROM projects limit ${LIMIT_AMOUNT}`,{});
+        if (!result[0]) {
+            console.log(`Limit test: ${JSON.stringify(result)}`);
+            expect(result[1].length).toBeLessThanOrEqual(LIMIT_AMOUNT);
+        }
+        else{ //err
+            console.log(JSON.stringify(result));
+        }
+    });
 
     /*
     it('.where(RANGE).le()', function(done) {

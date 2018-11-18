@@ -1,6 +1,6 @@
 {
 	"name": "@avizaviz/dynamodb-sql",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Execute queries against Amazon DynamoDB using a SQL-like syntax",
 	"main": "./lib/dynamodb",
 	"scripts": {
@@ -23,15 +23,17 @@
 	"homepage": "https://github.com/awspilot/dynamodb-sql#readme",
 	"dependencies": {
 		"@awspilot/dynamodb": "*",
-		"aws-sdk": ">=2.45.0"
+		"@awspilot/dynamodb-sql": "github:awspilot/dynamodb-sql",
+		"aws-sdk": "2.45.0"
 	},
 	"devDependencies": {
 		"assert": "*",
-		"async": "^2.6.0",
+		"async": "2.6.0",
 		"chai": "*",
 		"dynalite": "1.2.0",
 		"memdown": "*",
-		"mocha": "^5.0.4",
-		"should": "*"
+		"mocha": "5.0.4",
+		"should": "*",
+		"expect": "^23.6.0"
 	}
 }
