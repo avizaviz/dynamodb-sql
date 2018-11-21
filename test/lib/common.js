@@ -1,5 +1,5 @@
-async = require('async')
-assert = require('assert')
+async = require('async');
+assert = require('assert');
 
 $rangeTable = $tableName = 'test_hash_range'
 $hashTable = 'test_hash'

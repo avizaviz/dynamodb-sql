@@ -1,6 +1,6 @@
 {
 	"name": "@avizaviz/dynamodb-sql",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Execute queries against Amazon DynamoDB using a SQL-like syntax",
 	"main": "./lib/dynamodb",
 	"scripts": {
@@ -24,7 +24,8 @@
 	"dependencies": {
 		"@awspilot/dynamodb": "*",
 		"@awspilot/dynamodb-sql": "github:awspilot/dynamodb-sql",
-		"aws-sdk": "2.45.0"
+		"aws-sdk": "2.45.0",
+		"babel-preset-es2015": "^6.24.1"
 	},
 	"devDependencies": {
 		"assert": "*",

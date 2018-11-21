@@ -193,8 +193,7 @@ describe('query', function () {
     })
 
     it('SELECT * Fand scan multiple pages (integration test in remark)', function (done) {
-        DynamoSQL.query(`
-                        SELECT *
+        DynamoSQL.query(`                        SELECT *
                         FROM projects
                         having projectName = 'ga-api'
 
